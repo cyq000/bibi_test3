@@ -13,6 +13,17 @@ cmake-build-*/
 *.swp
 .DS_Store
 
+# Visual Studio workspace / solution user files
+# Ignore Visual Studio `.vs` folders which contain local IDE state
+.vs/
+# Also ignore any nested .vs under project folders (defensive)
+**/.vs/
+
+# Visual Studio generated debug output for test project
+# Stop tracking compiled/debug artifacts under vs2019/test/Debug
+vs2019/test/Debug/
+vs2019/test/Debug/**
+
 # logs
 *.log
 
