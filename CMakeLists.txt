@@ -12,22 +12,29 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
 
 # 添加 include 目录
 include_directories(${CMAKE_SOURCE_DIR}/include)
+# third-party headers (nlohmann json)
+include_directories(${CMAKE_SOURCE_DIR}/third_party)
 
-# 源文件
+# 源文件（来自 src/ 目录）
 set(SOURCES
-    main.cpp
-    Worker.cpp
-    BinanceAPI.cpp
-    FeishuNotifier.cpp
-    BinanceAPIManager.cpp
-    OIAnalyzer.cpp
+    src/main.cpp
+    src/Worker.cpp
+    src/BinanceAPI.cpp
+    src/FeishuNotifier.cpp
+    src/BinanceAPIManager.cpp
+    src/OIAnalyzer.cpp
 )
 
 add_executable(monitor ${SOURCES})
 
 # 链接依赖库
 find_package(CURL REQUIRED)
-target_link_libraries(monitor ${CURL_LIBRARIES} pthread)
+include_directories(${CURL_INCLUDE_DIRS})
+if(UNIX)
+    target_link_libraries(monitor ${CURL_LIBRARIES} pthread)
+else()
+    target_link_libraries(monitor ${CURL_LIBRARIES})
+endif()
 
 # 打印调试信息
 message(STATUS "CURL include: ${CURL_INCLUDE_DIRS}")

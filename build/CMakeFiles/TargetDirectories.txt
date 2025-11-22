@@ -1,3 +1,3 @@
-/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/monitor.dir
-/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/rebuild_cache.dir
+D:/E/vs2019-bibi/bibi/c-bibi/bibi_test3/build/CMakeFiles/monitor.dir
+D:/E/vs2019-bibi/bibi/c-bibi/bibi_test3/build/CMakeFiles/ALL_BUILD.dir
+D:/E/vs2019-bibi/bibi/c-bibi/bibi_test3/build/CMakeFiles/ZERO_CHECK.dir
