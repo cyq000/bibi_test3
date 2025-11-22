@@ -1,0 +1,24 @@
+# build artifacts
+/build/
+cmake-build-*/
+*.o
+*.obj
+*.exe
+*.out
+*.so
+*.a
+
+# IDE / OS
+.vscode/
+*.swp
+.DS_Store
+
+# logs
+*.log
+
+# cmake files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+build/
