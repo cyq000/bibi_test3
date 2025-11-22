@@ -1,0 +1,3 @@
+/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/monitor.dir
+/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/bibi/c-bibi/test3/build/CMakeFiles/rebuild_cache.dir
