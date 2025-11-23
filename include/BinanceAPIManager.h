@@ -40,27 +40,29 @@ public:
 
     void init();
 
-    /* ============特定条件判断============ */
-    /*
-    / 条件1检查：2小时级别，持仓量基本不变
-    */
-    ConditionResult checkCondition1(const std::string& symbol);
+    BinanceAPI& getBiAnIns();
 
-    /*
-    * 条件2检查：（period）分钟级别，持仓量增加超过（increaseRate）
-    */
-    ConditionResult checkCondition2(const std::string& symbol,const std::string& period,int increaseRate, int limit = 4);
+    // /* ============特定条件判断============ */
+    // /*
+    // / 条件1检查：2小时级别，持仓量基本不变
+    // */
+    // ConditionResult checkCondition1(const std::string& symbol);
 
-    /*
-    * 判断持仓量是否稳定（±2% 波动范围）
-    */
-    ConditionResult evaluateStableOI(const std::vector<BianOIData>& data);
+    // /*
+    // * 条件2检查：（period）分钟级别，持仓量增加超过（increaseRate）
+    // */
+    // ConditionResult checkCondition2(const std::string& symbol,const std::string& period,int increaseRate, int limit = 4);
 
-    /*
-    * 简单趋势分析
-    *
-    */
-    void analyzeOITrend(const std::vector<double>& oiData, ConditionResult& conditionResult);
+    // /*
+    // * 判断持仓量是否稳定（±2% 波动范围）
+    // */
+    // ConditionResult evaluateStableOI(const std::string& data);
+
+    // /*
+    // * 简单趋势分析
+    // *
+    // */
+    // void analyzeOITrend(const std::vector<double>& oiData, ConditionResult& conditionResult);
 
 private:
     BinanceAPIManager() = default;

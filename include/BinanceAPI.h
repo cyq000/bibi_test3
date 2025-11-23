@@ -5,13 +5,13 @@
 #include <vector>
 
 
-struct BianOIData {
-    std::string symbol;
-    double OI;
-    double OIV;
-    double price;
-    long long ts;
-};
+// struct BianOIData {
+//     std::string symbol;
+//     double OI;
+//     double OIV;
+//     double price;
+//     long long ts;
+// };
 
 class BinanceAPI {
 public:
@@ -33,8 +33,9 @@ public:
     * const std::string& period 时间周期
     * int limit K线数
     */
-    std::vector<BianOIData> fetchOpenInterestData(const std::string& symbol, const std::string& period, int limit);
-
+    //std::vector<BianOIData> fetchOpenInterestData(const std::string& symbol, const std::string& period, int limit);
+    std::string fetchOpenInterestData(const std::string& symbol, const std::string& period, int limit);
+    
 private:
     std::string httpGet(const std::string& url);
 };

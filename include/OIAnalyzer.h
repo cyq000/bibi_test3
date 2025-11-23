@@ -26,6 +26,7 @@ public:
 
 private:
     double changeRate(double curr, double prev);
+    double smoothScore(const std::vector<double>& v);
     int direction(double x);
     std::string classify(const AnalysisResult& r);
 };

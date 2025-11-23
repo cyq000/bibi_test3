@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\..\src\OIAnalyzer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\OIAnalyzer_v2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\src\Worker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -45,6 +48,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\OIAnalyzer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\OIAnalyzer_v2.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\Worker.h">

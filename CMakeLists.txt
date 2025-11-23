@@ -23,6 +23,7 @@ set(SOURCES
     src/FeishuNotifier.cpp
     src/BinanceAPIManager.cpp
     src/OIAnalyzer.cpp
+    src/OIAnalyzer_v2.cpp
 )
 
 add_executable(monitor ${SOURCES})

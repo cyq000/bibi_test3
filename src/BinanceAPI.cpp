@@ -1,4 +1,4 @@
-#include "BinanceAPI.h"
+﻿#include "BinanceAPI.h"
 #include "Logger.h"
 #include <nlohmann/json.hpp>
 #include <iostream>
@@ -131,26 +131,26 @@ std::string BinanceAPI::httpGet(const std::string& url) {
 #endif
 
 
-std::vector<BianOIData> parseJson(const std::string& raw) {
-    std::vector<BianOIData> out;
-
-    json j = json::parse(raw);
-
-    for (auto& item : j) {
-        BianOIData d;
-        d.symbol = item["symbol"];
-        d.OI = stod(item["sumOpenInterest"].get<std::string>());
-        d.OIV = stod(item["sumOpenInterestValue"].get<std::string>());
-        d.ts = item["timestamp"];
-
-        // 推算价格
-        d.price = (d.OIV / d.OI);
-
-        out.push_back(d);
-    }
-
-    return out;
-}
+//std::vector<BianOIData> parseJson(const std::string& raw) {
+//    std::vector<BianOIData> out;
+//
+//    json j = json::parse(raw);
+//
+//    for (auto& item : j) {
+//        BianOIData d;
+//        d.symbol = item["symbol"];
+//        d.OI = stod(item["sumOpenInterest"].get<std::string>());
+//        d.OIV = stod(item["sumOpenInterestValue"].get<std::string>());
+//        d.ts = item["timestamp"];
+//
+//        // 推算价格
+//        d.price = (d.OIV / d.OI);
+//
+//        out.push_back(d);
+//    }
+//
+//    return out;
+//}
 
 // 获取符合条件的合约交易对
 std::vector<std::string> BinanceAPI::getSymbolsWithVolume(long minVol, long maxVol) {
@@ -180,38 +180,38 @@ std::vector<std::string> BinanceAPI::getSymbolsWithVolume(long minVol, long maxV
 }
 
 // 拉取 open interest 数据
-std::vector<BianOIData> BinanceAPI::fetchOpenInterestData(const std::string &symbol, const std::string &period, int limit)
+std::string BinanceAPI::fetchOpenInterestData(const std::string &symbol, const std::string &period, int limit)
 {
-    return {};
-    //// 例https://fapi.binance.com/futures/data/openInterestHist?symbol=BTCUSDT&period=4h&limit=30
+    // 例https://fapi.binance.com/futures/data/openInterestHist?symbol=BTCUSDT&period=4h&limit=30
 
-    //std::ostringstream url;
-    //url << "https://fapi.binance.com/futures/data/openInterestHist?symbol="
-    //    << symbol << "&period=" << period << "&limit=" << limit;
+    std::ostringstream url;
+    url << "https://fapi.binance.com/futures/data/openInterestHist?symbol="
+        << symbol << "&period=" << period << "&limit=" << limit;
 
-    //std::string resp = httpGet(url.str());
+    std::string resp = httpGet(url.str());
 
-    //if (resp.empty())
-    //{
-    //    LOG_WARN("fetchOpenInterestData empty response for " + symbol + " " + period);
-    //    std::cerr << "Error: empty response for " << symbol << " " << period << std::endl;
-    //    return {}; // 返回空结果，不解析
-    //}
+    if (resp.empty())
+    {
+        LOG_WARN("fetchOpenInterestData empty response for " + symbol + " " + period);
+        std::cerr << "Error: empty response for " << symbol << " " << period << std::endl;
+        return {}; // 返回空结果，不解析
+    }
 
-    //try
-    //{
-    //    // 解析 JSON → 数据结构
-    //    std::vector<BianOIData> data = parseJson(resp);
+    try
+    {
+        // // 解析 JSON → 数据结构
+        // std::vector<BianOIData> data = parseJson(resp);
+        // return data;
 
-    //    return data;
-    //}
-    //catch (const json::parse_error &e)
-    //{
-    //    LOG_WARN("fetchOpenInterestData JSON parse error for " + symbol + " " + period + ": " + e.what());
-    //    std::cerr << "JSON parse error: " << e.what()
-    //              << " | Response: " << resp.substr(0, 200) << std::endl;
-    //    return {};
-    //}
+        return resp;
+    }
+    catch (const json::parse_error &e)
+    {
+        LOG_WARN("fetchOpenInterestData JSON parse error for " + symbol + " " + period + ": " + e.what());
+        std::cerr << "JSON parse error: " << e.what()
+                  << " | Response: " << resp.substr(0, 200) << std::endl;
+        return {};
+    }
 }
 
 

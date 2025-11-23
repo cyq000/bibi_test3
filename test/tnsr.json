@@ -159,54 +159,5 @@
         "sumOpenInterestValue": "1741361.95910400",
         "CMCCirculatingSupply": "410479204.70602430",
         "timestamp": 1763294400000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "41424986.30000000",
-        "sumOpenInterestValue": "1726593.42898400",
-        "CMCCirculatingSupply": "410479204.70602430",
-        "timestamp": 1763337600000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "43334520.40000000",
-        "sumOpenInterestValue": "1814849.71435200",
-        "CMCCirculatingSupply": "383479211.19027590",
-        "timestamp": 1763380800000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "51308713.80000000",
-        "sumOpenInterestValue": "1960505.95429800",
-        "CMCCirculatingSupply": "383479211.19027590",
-        "timestamp": 1763424000000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "65584060.70000000",
-        "sumOpenInterestValue": "2308558.93664000",
-        "CMCCirculatingSupply": "447539099.41205220",
-        "timestamp": 1763467200000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "100469424.40000000",
-        "sumOpenInterestValue": "3022120.28595200",
-        "CMCCirculatingSupply": "447539099.41205220",
-        "timestamp": 1763510400000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "67286081.20000000",
-        "sumOpenInterestValue": "2842962.75567184",
-        "CMCCirculatingSupply": "447539093.96174276",
-        "timestamp": 1763553600000
-    },
-    {
-        "symbol": "TNSRUSDT",
-        "sumOpenInterest": "269832907.50000000",
-        "sumOpenInterestValue": "20936686.07570475",
-        "CMCCirculatingSupply": "447539093.96174276",
-        "timestamp": 1763596800000
     }
 ]
